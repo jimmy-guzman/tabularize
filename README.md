@@ -1,4 +1,4 @@
-# React Starter
+# Tabularize
 
 > 🍱 Another React Starter using Vite, TypeScript, tailwindcss, daisyUI and more.
 

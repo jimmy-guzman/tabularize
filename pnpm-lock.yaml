@@ -17,6 +17,9 @@ importers:
       '@tanstack/react-router':
         specifier: 1.136.6
         version: 1.136.6(react-dom@19.2.0(react@19.2.0))(react@19.2.0)
+      cliptabular:
+        specifier: 1.1.2
+        version: 1.1.2
       react:
         specifier: 19.2.0
         version: 19.2.0
@@ -2368,6 +2371,10 @@ packages:
   cli-width@4.1.0:
     resolution: {integrity: sha512-ouuZd4/dm2Sw5Gmqy6bGyNNNe1qt9RpmxveLSO7KcgsTnU7RXfsw+/bukWGo1abgBiMAic068rclZsO4IWmmxQ==}
     engines: {node: '>= 12'}
+
+  cliptabular@1.1.2:
+    resolution: {integrity: sha512-1ArMNHKZn/12jOlwl5rHB34kxWttc1GFeS1FX+uxAwMow50HrzB2xeoMDXvZOzQ7g3kPs5kjDNUUPqxdYws/Tw==}
+    engines: {node: '>= 20'}
 
   cliui@8.0.1:
     resolution: {integrity: sha512-BSeNnyus75C4//NQ9gQt1/csTXyo/8Sb+afLAkzAptFuMsod9HFokGNudZpi/oQV73hnVK+sR+5PVRMd+Dr7YQ==}
@@ -7468,6 +7475,8 @@ snapshots:
       escape-string-regexp: 1.0.5
 
   cli-width@4.1.0: {}
+
+  cliptabular@1.1.2: {}
 
   cliui@8.0.1:
     dependencies:
