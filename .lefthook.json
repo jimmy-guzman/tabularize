@@ -1,0 +1,21 @@
+{
+  "$schema": "https://json.schemastore.org/lefthook.json",
+  "pre-commit": {
+    "parallel": true,
+    "commands": {
+      "lint": {
+        "glob": "*.{js,cjs,ts,tsx}",
+        "run": "pnpm eslint --fix {staged_files}",
+        "stage_fixed": true
+      },
+      "format": {
+        "glob": "*.{md,json,yml,html,js,cjs,ts,tsx}",
+        "run": "pnpm prettier --write {staged_files}",
+        "stage_fixed": true
+      },
+      "knip": {
+        "run": "pnpm knip"
+      }
+    }
+  }
+}
