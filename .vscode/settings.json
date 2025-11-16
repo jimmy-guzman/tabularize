@@ -2,6 +2,7 @@
   "cSpell.words": [
     "antfu",
     "autodocs",
+    "cliptabular",
     "clsx",
     "daisyui",
     "esbuild",
@@ -16,6 +17,7 @@
     "nvmrc",
     "Parens",
     "prefersdark",
+    "tabularize",
     "tailwindcss",
     "tanstack",
     "tiged",

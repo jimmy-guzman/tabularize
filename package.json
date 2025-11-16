@@ -24,6 +24,7 @@
   "dependencies": {
     "@tanstack/react-query": "5.90.9",
     "@tanstack/react-router": "1.136.6",
+    "cliptabular": "1.1.2",
     "react": "19.2.0",
     "react-dom": "19.2.0"
   },
