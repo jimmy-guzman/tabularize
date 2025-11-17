@@ -1,10 +1,12 @@
-import { parse } from "cliptabular";
+import { parse, stringify } from "cliptabular";
 import { useMemo, useState } from "react";
 
 import { links } from "@/config/links";
 
 type ViewMode = "json" | "table";
 type EmptyValueMode = "custom" | "empty" | "null";
+type OptionsPanel = "parse" | "stringify";
+type LineEndingMode = "cr" | "crlf" | "lf";
 
 export function Hero() {
   const [raw, setRaw] = useState("");
@@ -16,6 +18,18 @@ export function Hero() {
   const [skipEmptyCells, setSkipEmptyCells] = useState(false);
   const [padRows, setPadRows] = useState(false);
   const [trim, setTrim] = useState(true);
+
+  const [copied, setCopied] = useState(false);
+  const [optionsPanel, setOptionsPanel] = useState<OptionsPanel>("parse");
+
+  const [lineEndingMode, setLineEndingMode] = useState<LineEndingMode>("lf");
+  const [emptyOutput, setEmptyOutput] = useState("");
+
+  const [delimiterInput, setDelimiterInput] = useState(String.raw`\t`);
+
+  const delimiter = useMemo(() => {
+    return delimiterInput === String.raw`\t` ? "\t" : delimiterInput;
+  }, [delimiterInput]);
 
   const effectiveEmptyValue = useMemo(() => {
     if (emptyMode === "null") return null;
@@ -44,12 +58,15 @@ export function Hero() {
     return parsed.reduce((max, row) => Math.max(row.length, max), 0);
   }, [parsed]);
 
+  const lineEnding =
+    lineEndingMode === "lf" ? "\n" : lineEndingMode === "cr" ? "\r" : "\r\n";
+
   return (
     <section className="mx-auto flex w-full max-w-5xl flex-col gap-6 px-4 py-12">
       <header className="space-y-2 text-center">
-        <h1 className="text-3xl font-semibold tracking-tight">tabuluralize</h1>
+        <h1 className="text-3xl font-semibold tracking-tight">tabularize</h1>
         <p className="text-sm text-base-content/70">
-          Paste data from Excel, Sheets, or CSV. tabuluralize uses{" "}
+          Paste data from Excel, Sheets, or CSV. tabularize uses{" "}
           <a
             className="dsy-link font-mono"
             href={links.cliptabular}
@@ -102,37 +119,103 @@ export function Hero() {
                 </span>
               </div>
 
-              <div className="dsy-join">
+              <div className="flex items-center gap-2">
+                <div className="dsy-join">
+                  <button
+                    className={`dsy-btn dsy-join-item dsy-btn-sm ${
+                      view === "table" ? "dsy-btn-active" : "dsy-btn-ghost"
+                    }`}
+                    onClick={() => {
+                      setView("table");
+                    }}
+                    type="button"
+                  >
+                    table
+                  </button>
+                  <button
+                    className={`dsy-btn dsy-join-item dsy-btn-sm ${
+                      view === "json" ? "dsy-btn-active" : "dsy-btn-ghost"
+                    }`}
+                    onClick={() => {
+                      setView("json");
+                    }}
+                    type="button"
+                  >
+                    json
+                  </button>
+                </div>
+
                 <button
-                  className={`dsy-btn dsy-join-item dsy-btn-sm ${
-                    view === "table" ? "dsy-btn-active" : "dsy-btn-ghost"
-                  }`}
-                  onClick={() => {
-                    setView("table");
+                  className="dsy-btn dsy-btn-ghost dsy-btn-sm"
+                  disabled={!parsed}
+                  onClick={async () => {
+                    if (!parsed) return;
+
+                    try {
+                      const text = stringify(parsed, {
+                        // @ts-expect-error -- cliptabular types need updating
+                        delimiter,
+                        emptyOutput,
+                        emptyValue: effectiveEmptyValue,
+                        lineEnding,
+                      });
+
+                      await navigator.clipboard.writeText(text);
+                      setCopied(true);
+                      globalThis.setTimeout(() => {
+                        setCopied(false);
+                      }, 1500);
+                    } catch {
+                      // Swallow for now; could add toast/logging later
+                    }
                   }}
                   type="button"
                 >
-                  table
-                </button>
-                <button
-                  className={`dsy-btn dsy-join-item dsy-btn-sm ${
-                    view === "json" ? "dsy-btn-active" : "dsy-btn-ghost"
-                  }`}
-                  onClick={() => {
-                    setView("json");
-                  }}
-                  type="button"
-                >
-                  json
+                  {copied ? "Copied!" : "Copy"}
                 </button>
               </div>
             </div>
 
             {/* Options strip */}
-            <div className="flex flex-wrap items-center gap-3 border-b border-base-content/10 px-4 py-3 text-xs">
-              <div className="flex flex-wrap items-center gap-2">
+            <div className="border-b border-base-content/10 px-4 py-3 text-xs">
+              <div className="mb-3 flex items-center justify-between gap-3">
                 <span className="dsy-label text-[11px] tracking-wide uppercase opacity-70">
-                  empty cells
+                  Options
+                </span>
+                <div className="dsy-join">
+                  <button
+                    className={`dsy-btn dsy-join-item dsy-btn-xs ${
+                      optionsPanel === "parse"
+                        ? "dsy-btn-active"
+                        : "dsy-btn-ghost"
+                    }`}
+                    onClick={() => {
+                      setOptionsPanel("parse");
+                    }}
+                    type="button"
+                  >
+                    Parse
+                  </button>
+                  <button
+                    className={`dsy-btn dsy-join-item dsy-btn-xs ${
+                      optionsPanel === "stringify"
+                        ? "dsy-btn-active"
+                        : "dsy-btn-ghost"
+                    }`}
+                    onClick={() => {
+                      setOptionsPanel("stringify");
+                    }}
+                    type="button"
+                  >
+                    Stringify
+                  </button>
+                </div>
+              </div>
+
+              {/* Shared empty value controls */}
+              <div className="mb-4 flex flex-wrap items-center gap-2">
+                <span className="dsy-label text-[11px] tracking-wide uppercase opacity-70">
+                  empty value
                 </span>
                 <label className="inline-flex cursor-pointer items-center gap-1">
                   <input
@@ -143,7 +226,6 @@ export function Hero() {
                       setEmptyMode("null");
                     }}
                     type="radio"
-                    value="null"
                   />
                   <span>null</span>
                 </label>
@@ -156,7 +238,6 @@ export function Hero() {
                       setEmptyMode("empty");
                     }}
                     type="radio"
-                    value="empty"
                   />
                   <span>""</span>
                 </label>
@@ -169,13 +250,12 @@ export function Hero() {
                       setEmptyMode("custom");
                     }}
                     type="radio"
-                    value="custom"
                   />
                   <span>custom</span>
                 </label>
                 {emptyMode === "custom" ? (
                   <input
-                    className="dsy-input dsy-input-xs w-20"
+                    className="dsy-input dsy-input-xs w-20 font-mono"
                     onChange={(event) => {
                       setCustomEmpty(event.target.value);
                     }}
@@ -186,51 +266,159 @@ export function Hero() {
                 ) : null}
               </div>
 
-              <div className="flex flex-wrap items-center gap-3">
-                <label className="inline-flex cursor-pointer items-center gap-1">
-                  <input
-                    checked={padRows}
-                    className="dsy-checkbox dsy-checkbox-xs"
-                    onChange={(event) => {
-                      setPadRows(event.target.checked);
-                    }}
-                    type="checkbox"
-                  />
-                  <span>pad rows</span>
-                </label>
-                <label className="inline-flex cursor-pointer items-center gap-1">
-                  <input
-                    checked={skipEmptyRows}
-                    className="dsy-checkbox dsy-checkbox-xs"
-                    onChange={(event) => {
-                      setSkipEmptyRows(event.target.checked);
-                    }}
-                    type="checkbox"
-                  />
-                  <span>skip empty rows</span>
-                </label>
-                <label className="inline-flex cursor-pointer items-center gap-1">
-                  <input
-                    checked={skipEmptyCells}
-                    className="dsy-checkbox dsy-checkbox-xs"
-                    onChange={(event) => {
-                      setSkipEmptyCells(event.target.checked);
-                    }}
-                    type="checkbox"
-                  />
-                  <span>skip empty cells</span>
-                </label>
-                <label className="inline-flex cursor-pointer items-center gap-1">
-                  <input
-                    checked={trim}
-                    className="dsy-checkbox dsy-checkbox-xs"
-                    onChange={(event) => {
-                      setTrim(event.target.checked);
-                    }}
-                    type="checkbox"
-                  />
-                  <span>trim</span>
-                </label>
+              {/* Panel-specific options */}
+              <div className="min-h-24">
+                {optionsPanel === "parse" ? (
+                  <div className="flex flex-col gap-3">
+                    <div className="flex flex-wrap items-center gap-2">
+                      <span className="dsy-label text-[11px] tracking-wide uppercase opacity-70">
+                        rows
+                      </span>
+                      <label className="inline-flex cursor-pointer items-center gap-1">
+                        <input
+                          checked={padRows}
+                          className="dsy-checkbox dsy-checkbox-xs"
+                          onChange={(event) => {
+                            setPadRows(event.target.checked);
+                          }}
+                          type="checkbox"
+                        />
+                        <span>pad</span>
+                      </label>
+                      <label className="inline-flex cursor-pointer items-center gap-1">
+                        <input
+                          checked={skipEmptyRows}
+                          className="dsy-checkbox dsy-checkbox-xs"
+                          onChange={(event) => {
+                            setSkipEmptyRows(event.target.checked);
+                          }}
+                          type="checkbox"
+                        />
+                        <span>skip empty</span>
+                      </label>
+                    </div>
+
+                    <div className="flex flex-wrap items-center gap-2">
+                      <span className="dsy-label text-[11px] tracking-wide uppercase opacity-70">
+                        cells
+                      </span>
+                      <label className="inline-flex cursor-pointer items-center gap-1">
+                        <input
+                          checked={skipEmptyCells}
+                          className="dsy-checkbox dsy-checkbox-xs"
+                          onChange={(event) => {
+                            setSkipEmptyCells(event.target.checked);
+                          }}
+                          type="checkbox"
+                        />
+                        <span>skip empty</span>
+                      </label>
+                      <label className="inline-flex cursor-pointer items-center gap-1">
+                        <input
+                          checked={trim}
+                          className="dsy-checkbox dsy-checkbox-xs"
+                          onChange={(event) => {
+                            setTrim(event.target.checked);
+                          }}
+                          type="checkbox"
+                        />
+                        <span>trim</span>
+                      </label>
+                    </div>
+                  </div>
+                ) : (
+                  <div className="flex flex-col gap-3">
+                    <div className="flex flex-wrap items-center gap-2">
+                      <span className="dsy-label text-[11px] tracking-wide uppercase opacity-70">
+                        delimiter
+                      </span>
+                      <input
+                        className="dsy-input dsy-input-xs w-16 font-mono"
+                        onChange={(event) => {
+                          setDelimiterInput(event.target.value);
+                        }}
+                        placeholder="\t"
+                        type="text"
+                        value={delimiterInput}
+                      />
+                      <button
+                        className="dsy-btn dsy-btn-ghost dsy-btn-xs"
+                        onClick={() => {
+                          setDelimiterInput(String.raw`\t`);
+                        }}
+                        type="button"
+                      >
+                        tab
+                      </button>
+                      <button
+                        className="dsy-btn dsy-btn-ghost dsy-btn-xs"
+                        onClick={() => {
+                          setDelimiterInput(",");
+                        }}
+                        type="button"
+                      >
+                        comma
+                      </button>
+                    </div>
+
+                    <div className="flex flex-wrap items-center gap-2">
+                      <span className="dsy-label text-[11px] tracking-wide uppercase opacity-70">
+                        line endings
+                      </span>
+                      <label className="inline-flex cursor-pointer items-center gap-1">
+                        <input
+                          checked={lineEndingMode === "lf"}
+                          className="dsy-radio dsy-radio-xs"
+                          name="line-ending"
+                          onChange={() => {
+                            setLineEndingMode("lf");
+                          }}
+                          type="radio"
+                        />
+                        <span className="font-mono">\n</span>
+                      </label>
+                      <label className="inline-flex cursor-pointer items-center gap-1">
+                        <input
+                          checked={lineEndingMode === "cr"}
+                          className="dsy-radio dsy-radio-xs"
+                          name="line-ending"
+                          onChange={() => {
+                            setLineEndingMode("cr");
+                          }}
+                          type="radio"
+                        />
+                        <span className="font-mono">\r</span>
+                      </label>
+                      <label className="inline-flex cursor-pointer items-center gap-1">
+                        <input
+                          checked={lineEndingMode === "crlf"}
+                          className="dsy-radio dsy-radio-xs"
+                          name="line-ending"
+                          onChange={() => {
+                            setLineEndingMode("crlf");
+                          }}
+                          type="radio"
+                        />
+                        <span className="font-mono">\r\n</span>
+                      </label>
+                    </div>
+
+                    <div className="flex flex-wrap items-center gap-2">
+                      <span className="dsy-label text-[11px] tracking-wide uppercase opacity-70">
+                        empty output
+                      </span>
+                      <input
+                        className="dsy-input dsy-input-xs w-20 font-mono"
+                        onChange={(event) => {
+                          setEmptyOutput(event.target.value);
+                        }}
+                        placeholder='""'
+                        type="text"
+                        value={emptyOutput}
+                      />
+                    </div>
+                  </div>
+                )}
               </div>
             </div>
 
