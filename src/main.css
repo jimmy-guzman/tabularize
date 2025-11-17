@@ -7,6 +7,6 @@
   logs: false;
   exclude: properties; /* https://github.com/saadeghi/daisyui/issues/3882 */
   themes:
-    autumn --default,
+    corporate --default,
     business --prefersdark;
 }
