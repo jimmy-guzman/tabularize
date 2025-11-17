@@ -1,31 +1,40 @@
 import { parse, stringify } from "cliptabular";
 import { useMemo, useState } from "react";
 
-import { links } from "@/config/links";
+import type { LineEndingMode } from "@/routes";
 
-type ViewMode = "json" | "table";
-type EmptyValueMode = "custom" | "empty" | "null";
-type OptionsPanel = "parse" | "stringify";
-type LineEndingMode = "cr" | "crlf" | "lf";
+import { links } from "@/config/links";
+import { useHeroSearch } from "@/hooks/use-tabularize-search";
 
 export function Hero() {
-  const [raw, setRaw] = useState("");
-  const [view, setView] = useState<ViewMode>("table");
-
-  const [emptyMode, setEmptyMode] = useState<EmptyValueMode>("null");
-  const [customEmpty, setCustomEmpty] = useState("N/A");
-  const [skipEmptyRows, setSkipEmptyRows] = useState(false);
-  const [skipEmptyCells, setSkipEmptyCells] = useState(false);
-  const [padRows, setPadRows] = useState(false);
-  const [trim, setTrim] = useState(true);
-
   const [copied, setCopied] = useState(false);
-  const [optionsPanel, setOptionsPanel] = useState<OptionsPanel>("parse");
 
-  const [lineEndingMode, setLineEndingMode] = useState<LineEndingMode>("lf");
-  const [emptyOutput, setEmptyOutput] = useState("");
-
-  const [delimiterInput, setDelimiterInput] = useState(String.raw`\t`);
+  const {
+    customEmpty,
+    delimiterInput,
+    emptyMode,
+    emptyOutput,
+    lineEndingMode,
+    optionsPanel,
+    padRows,
+    raw,
+    setCustomEmpty,
+    setDelimiterInput,
+    setEmptyMode,
+    setEmptyOutput,
+    setLineEndingMode,
+    setOptionsPanel,
+    setPadRows,
+    setRaw,
+    setSkipEmptyCells,
+    setSkipEmptyRows,
+    setTrim,
+    setView,
+    skipEmptyCells,
+    skipEmptyRows,
+    trim,
+    view,
+  } = useHeroSearch();
 
   const delimiter = useMemo(() => {
     return delimiterInput === String.raw`\t` ? "\t" : delimiterInput;
