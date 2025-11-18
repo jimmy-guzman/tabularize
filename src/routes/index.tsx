@@ -30,6 +30,22 @@ export const Route = createFileRoute("/")({
     return (
       <main className="grid min-h-screen place-items-center">
         <Hero />
+        <footer className="dsy-footer-center dsy-footer place-self-end p-4 text-base-content/50 sm:dsy-footer-horizontal">
+          <aside>
+            <p>
+              Built by{" "}
+              <a
+                className="dsy-link"
+                href="https://jimmy.codes"
+                rel="noopener noreferrer"
+                target="_blank"
+              >
+                Jimmy Guzman Moreno
+              </a>
+              .
+            </p>
+          </aside>
+        </footer>
       </main>
     );
   },
