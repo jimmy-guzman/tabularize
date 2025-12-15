@@ -23,12 +23,12 @@
   },
   "dependencies": {
     "@tanstack/react-query": "5.90.12",
-    "@tanstack/react-router": "1.141.1",
+    "@tanstack/react-router": "1.141.2",
     "cliptabular": "1.3.0",
     "lz-string": "1.5.0",
     "react": "19.2.3",
     "react-dom": "19.2.3",
-    "zod": "4.1.13"
+    "zod": "4.2.0"
   },
   "devDependencies": {
     "@iconify-json/logos": "1.2.10",
