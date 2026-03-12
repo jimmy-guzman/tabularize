@@ -37,8 +37,8 @@ importers:
         specifier: 1.2.10
         version: 1.2.10
       '@iconify-json/lucide':
-        specifier: 1.2.96
-        version: 1.2.96
+        specifier: 1.2.97
+        version: 1.2.97
       '@iconify/tailwind4':
         specifier: 1.2.3
         version: 1.2.3(tailwindcss@4.2.1)
@@ -55,14 +55,14 @@ importers:
         specifier: 4.2.1
         version: 4.2.1(rolldown-vite@7.2.5(@types/node@25.3.3)(jiti@2.6.1)(terser@5.44.1)(tsx@4.21.0)(yaml@2.8.2))
       '@tanstack/devtools-vite':
-        specifier: 0.5.3
-        version: 0.5.3(rolldown-vite@7.2.5(@types/node@25.3.3)(jiti@2.6.1)(terser@5.44.1)(tsx@4.21.0)(yaml@2.8.2))
+        specifier: 0.5.5
+        version: 0.5.5(rolldown-vite@7.2.5(@types/node@25.3.3)(jiti@2.6.1)(terser@5.44.1)(tsx@4.21.0)(yaml@2.8.2))
       '@tanstack/eslint-plugin-router':
         specifier: 1.161.4
         version: 1.161.4(eslint@10.0.3(jiti@2.6.1))(typescript@5.9.3)
       '@tanstack/react-devtools':
-        specifier: 0.9.10
-        version: 0.9.10(@types/react-dom@19.2.3(@types/react@19.2.14))(@types/react@19.2.14)(csstype@3.2.3)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
+        specifier: 0.9.13
+        version: 0.9.13(@types/react-dom@19.2.3(@types/react@19.2.14))(@types/react@19.2.14)(csstype@3.2.3)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
       '@tanstack/react-query-devtools':
         specifier: 5.91.3
         version: 5.91.3(@tanstack/react-query@5.90.21(react@19.2.4))(react@19.2.4)
@@ -130,8 +130,8 @@ importers:
         specifier: 5.86.0
         version: 5.86.0(@types/node@25.3.3)(typescript@5.9.3)
       lefthook:
-        specifier: 2.1.3
-        version: 2.1.3
+        specifier: 2.1.4
+        version: 2.1.4
       msw:
         specifier: 2.12.10
         version: 2.12.10(@types/node@25.3.3)(typescript@5.9.3)
@@ -1024,8 +1024,8 @@ packages:
   '@iconify-json/logos@1.2.10':
     resolution: {integrity: sha512-qxaXKJ6fu8jzTMPQdHtNxlfx6tBQ0jXRbHZIYy5Ilh8Lx9US9FsAdzZWUR8MXV8PnWTKGDFO4ZZee9VwerCyMA==}
 
-  '@iconify-json/lucide@1.2.96':
-    resolution: {integrity: sha512-EICTusj67lvSmEaH/Lhe68ZyzcgfcPNpY00exAOkoo+z2fnLeNy31mdE3E/4/q8WjzZrICAZDxY3d6j7LzkgNA==}
+  '@iconify-json/lucide@1.2.97':
+    resolution: {integrity: sha512-Za6N/B2Nz1Lbr43f7+FOy6ZbxWACJanqZcrA3Gk1QE7ubQ/YCT1iKPLe5iJQImd60BBPPUvIwD5LmJkVeGHAxg==}
 
   '@iconify/tailwind4@1.2.3':
     resolution: {integrity: sha512-z8SKiMHRASJKF/IY//87MF88lcB7ulxh8vlhQXXLWsBkNtOh6ese9R41MyGpQeqXdRvQVt+/fX2glQtHFjQ+MA==}
@@ -1659,23 +1659,26 @@ packages:
     resolution: {integrity: sha512-cNnJ89Q021Zf883rlbBTfsaxTfi2r73/qejGtyTa7ksErF3hyDyAq1aTbo5crK9dAL7zSHh9viKY1BtMls1QOA==}
     engines: {node: '>=18'}
 
-  '@tanstack/devtools-event-client@0.4.1':
-    resolution: {integrity: sha512-GRxmPw4OHZ2oZeIEUkEwt/NDvuEqzEYRAjzUVMs+I0pd4C7k1ySOiuJK2CqF+K/yEAR3YZNkW3ExrpDarh9Vwg==}
+  '@tanstack/devtools-event-client@0.4.3':
+    resolution: {integrity: sha512-OZI6QyULw0FI0wjgmeYzCIfbgPsOEzwJtCpa69XrfLMtNXLGnz3d/dIabk7frg0TmHo+Ah49w5I4KC7Tufwsvw==}
     engines: {node: '>=18'}
+    hasBin: true
 
   '@tanstack/devtools-ui@0.5.0':
     resolution: {integrity: sha512-nNZ14054n31fWB61jtWhZYLRdQ3yceCE3G/RINoINUB0RqIGZAIm9DnEDwOTAOfqt4/a/D8vNk8pJu6RQUp74g==}
     engines: {node: '>=18'}
 
-  '@tanstack/devtools-vite@0.5.3':
-    resolution: {integrity: sha512-S7VK2GthBrEkto0UVODx31IAvxTFUK0RGH6aZEZixsohYTytTdrwcLmPKEREwFrRN8Qc2mIqfBhENPbRG1RFXA==}
+  '@tanstack/devtools-vite@0.5.5':
+    resolution: {integrity: sha512-vtXZ3LipEknVg0X6yejgWzZXIJSrvlBMWB1lDJKW6GWztEV+uCAoqLAJS+Jk3c2mTXp/u+aI/jfE0gqT4zHTNw==}
     engines: {node: '>=18'}
+    hasBin: true
     peerDependencies:
       vite: ^6.0.0 || ^7.0.0
 
-  '@tanstack/devtools@0.10.11':
-    resolution: {integrity: sha512-Nk1rHsv6S/5Krzz+uL5jldW9gKb3s6rkkVl1L9oVYHNClKthbrk2hGef4Di6yj449QIOqVExTdDujjQ4roq1dg==}
+  '@tanstack/devtools@0.10.14':
+    resolution: {integrity: sha512-bg1e0PyjmMMsc9VSOGb9etu15CpFdAwlQ5DD2xS6N93iTPgCPWXiZQFZygrEDoKnnx1x7BM6QTaiukizaejgSA==}
     engines: {node: '>=18'}
+    hasBin: true
 
   '@tanstack/eslint-plugin-query@5.91.4':
     resolution: {integrity: sha512-8a+GAeR7oxJ5laNyYBQ6miPK09Hi18o5Oie/jx8zioXODv/AUFLZQecKabPdpQSLmuDXEBPKFh+W5DKbWlahjQ==}
@@ -1701,8 +1704,8 @@ packages:
   '@tanstack/query-devtools@5.93.0':
     resolution: {integrity: sha512-+kpsx1NQnOFTZsw6HAFCW3HkKg0+2cepGtAWXjiiSOJJ1CtQpt72EE2nyZb+AjAbLRPoeRmPJ8MtQd8r8gsPdg==}
 
-  '@tanstack/react-devtools@0.9.10':
-    resolution: {integrity: sha512-WKFU8SXN7DLM7EyD2aUAhmk7JGNeONWhQozAH2qDCeOjyc3Yzxs4BxeoyKMYyEiX/eCp8ZkMTf/pJX6vm2LGeA==}
+  '@tanstack/react-devtools@0.9.13':
+    resolution: {integrity: sha512-O9YXTEe2dlnw2pPNKFZ4Wk7zC4qrDvc0SAALKfMVedeZ2Dyd0LEJUabYS6GPm+DmnrBhc7nJx6Zqc9aDjFrj4g==}
     engines: {node: '>=18'}
     peerDependencies:
       '@types/react': '>=16.8'
@@ -2366,8 +2369,8 @@ packages:
     resolution: {integrity: sha512-+ys997U96po4Kx/ABpBCqhA9EuxJaQWDQg7295H4hBphv3IZg0boBKuwYpt4YXp6MZ5AmZQnU/tyMTlRpaSejg==}
     engines: {node: '>= 0.4'}
 
-  caniuse-lite@1.0.30001777:
-    resolution: {integrity: sha512-tmN+fJxroPndC74efCdp12j+0rk0RHwV5Jwa1zWaFVyw2ZxAuPeG8ZgWC3Wz7uSjT3qMRQ5XHZ4COgQmsCMJAQ==}
+  caniuse-lite@1.0.30001778:
+    resolution: {integrity: sha512-PN7uxFL+ExFJO61aVmP1aIEG4i9whQd4eoSCebav62UwDyp5OHh06zN4jqKSMePVgxHifCw1QJxdRkA1Pisekg==}
 
   chai@6.2.2:
     resolution: {integrity: sha512-NUPRluOfOiTKBKvWPtSD4PhFvWCqOi0BGStNWs57X9js7XGTprSmFoz5F0tWhR4WPjNeR9jXqdC7/UpSJTnlRg==}
@@ -3526,58 +3529,58 @@ packages:
   launch-editor@2.13.1:
     resolution: {integrity: sha512-lPSddlAAluRKJ7/cjRFoXUFzaX7q/YKI7yPHuEvSJVqoXvFnJov1/Ud87Aa4zULIbA9Nja4mSPK8l0z/7eV2wA==}
 
-  lefthook-darwin-arm64@2.1.3:
-    resolution: {integrity: sha512-VMSQK5ZUh66mKrEpHt5U81BxOg5xAXLoLZIK6e++4uc28tj8zGBqV9+tZqSRElXXzlnHbfdDVCMaKlTuqUy0Rg==}
+  lefthook-darwin-arm64@2.1.4:
+    resolution: {integrity: sha512-BUAAE9+rUrjr39a+wH/1zHmGrDdwUQ2Yq/z6BQbM/yUb9qtXBRcQ5eOXxApqWW177VhGBpX31aqIlfAZ5Q7wzw==}
     cpu: [arm64]
     os: [darwin]
 
-  lefthook-darwin-x64@2.1.3:
-    resolution: {integrity: sha512-4QhepF4cf+fa7sDow29IEuCfm/6LuV+oVyQGpnr5it1DEZIEEoa6vdH/x4tutYhAg/HH7I2jHq6FGz96HRiJEQ==}
+  lefthook-darwin-x64@2.1.4:
+    resolution: {integrity: sha512-K1ncIMEe84fe+ss1hQNO7rIvqiKy2TJvTFpkypvqFodT7mJXZn7GLKYTIXdIuyPAYthRa9DwFnx5uMoHwD2F1Q==}
     cpu: [x64]
     os: [darwin]
 
-  lefthook-freebsd-arm64@2.1.3:
-    resolution: {integrity: sha512-kysx/9pjifOgcTZOj1bR0i74FAbMv3BDfrpZDKniBOo4Dp0hXhyOtUmRn4nWKL0bN+cqc4ZePAq4Qdm4fxWafA==}
+  lefthook-freebsd-arm64@2.1.4:
+    resolution: {integrity: sha512-PVUhjOhVN71YaYsVdQyNbFZ4a2jFB2Tg5hKrrn9kaWpx64aLz/XivLjwr8sEuTaP1GRlEWBpW6Bhrcsyo39qFw==}
     cpu: [arm64]
     os: [freebsd]
 
-  lefthook-freebsd-x64@2.1.3:
-    resolution: {integrity: sha512-TLuPHQNg6iihShchrh5DrHvoCZO8FajZBMAEwLIKWlm6bkCcXbYNxy4dBaVK8lzHtS/Kv1bnH0D3BcK65iZFVQ==}
+  lefthook-freebsd-x64@2.1.4:
+    resolution: {integrity: sha512-ZWV9o/LeyWNEBoVO+BhLqxH3rGTba05nkm5NvMjEFSj7LbUNUDbQmupZwtHl1OMGJO66eZP0CalzRfUH6GhBxQ==}
     cpu: [x64]
     os: [freebsd]
 
-  lefthook-linux-arm64@2.1.3:
-    resolution: {integrity: sha512-e5x4pq1aZAXc0C642V4HaUoKtcHVmGW1HBIDNfWUhtsThBKjhZBXPspecaAHIRA/8VtsXS3RnJ4VhQpgfrCbww==}
+  lefthook-linux-arm64@2.1.4:
+    resolution: {integrity: sha512-iWN0pGnTjrIvNIcSI1vQBJXUbybTqJ5CLMniPA0olabMXQfPDrdMKVQe+mgdwHK+E3/Y0H0ZNL3lnOj6Sk6szA==}
     cpu: [arm64]
     os: [linux]
 
-  lefthook-linux-x64@2.1.3:
-    resolution: {integrity: sha512-yeVAiV5hoE6Qq8dQDB4XC14x4N9mhn+FetxzqDu5LVci0/sOPqyPq2b0YUtNwJ1ZUKawTz4I/oqnUsHkQrGH0w==}
+  lefthook-linux-x64@2.1.4:
+    resolution: {integrity: sha512-96bTBE/JdYgqWYAJDh+/e/0MaxJ25XTOAk7iy/fKoZ1ugf6S0W9bEFbnCFNooXOcxNVTan5xWKfcjJmPIKtsJA==}
     cpu: [x64]
     os: [linux]
 
-  lefthook-openbsd-arm64@2.1.3:
-    resolution: {integrity: sha512-8QVvRxIosV6NL2XrbifOPGVhMFE43h02BUNEHYhZhyad7BredfAakg9dA9J/NO0I3eMdvCYU50ubFyDGIqUJog==}
+  lefthook-openbsd-arm64@2.1.4:
+    resolution: {integrity: sha512-oYUoK6AIJNEr9lUSpIMj6g7sWzotvtc3ryw7yoOyQM6uqmEduw73URV/qGoUcm4nqqmR93ZalZwR2r3Gd61zvw==}
     cpu: [arm64]
     os: [openbsd]
 
-  lefthook-openbsd-x64@2.1.3:
-    resolution: {integrity: sha512-YTS9qeW9PzzKg9Rk55mQprLIl1OdAIIjeOH8DF+MPWoAPkRqeUyq8Q2Bdlf3+Swy+kJOjoiU1pKvpjjc8upv9Q==}
+  lefthook-openbsd-x64@2.1.4:
+    resolution: {integrity: sha512-i/Dv9Jcm68y9cggr1PhyUhOabBGP9+hzQPoiyOhKks7y9qrJl79A8XfG6LHekSuYc2VpiSu5wdnnrE1cj2nfTg==}
     cpu: [x64]
     os: [openbsd]
 
-  lefthook-windows-arm64@2.1.3:
-    resolution: {integrity: sha512-Nlp80pWyF67GmxgM5NQmL7JTTccbJAvCNtS5QwHmKq3pJ9Xi0UegP9pGME520n06Rhp+gX7H4boXhm2D5hAghg==}
+  lefthook-windows-arm64@2.1.4:
+    resolution: {integrity: sha512-hSww7z+QX4YMnw2lK7DMrs3+w7NtxksuMKOkCKGyxUAC/0m1LAICo0ZbtdDtZ7agxRQQQ/SEbzFRhU5ysNcbjA==}
     cpu: [arm64]
     os: [win32]
 
-  lefthook-windows-x64@2.1.3:
-    resolution: {integrity: sha512-KByBhvqgUNhjO/03Mr0y66D9B1ZnII7AB0x17cumwHMOYoDaPJh/AlgmEduqUpatqli3lnFzWD0DUkAY6pq/SA==}
+  lefthook-windows-x64@2.1.4:
+    resolution: {integrity: sha512-eE68LwnogxwcPgGsbVGPGxmghyMGmU9SdGwcc+uhGnUxPz1jL89oECMWJNc36zjVK24umNeDAzB5KA3lw1MuWw==}
     cpu: [x64]
     os: [win32]
 
-  lefthook@2.1.3:
-    resolution: {integrity: sha512-2W8PP/EGCvyS/x+Xza0Lgvn/EM3FKnr6m6xkfzpl6RKHl8TwPvs9iYZFQL99CnWTTvO+1mtQvIxGE/bD05038Q==}
+  lefthook@2.1.4:
+    resolution: {integrity: sha512-JNfJ5gAn0KADvJ1I6/xMcx70+/6TL6U9gqGkKvPw5RNMfatC7jIg0Evl97HN846xmfz959BV70l8r3QsBJk30w==}
     hasBin: true
 
   leven@3.1.0:
@@ -5963,7 +5966,7 @@ snapshots:
     dependencies:
       '@iconify/types': 2.0.0
 
-  '@iconify-json/lucide@1.2.96':
+  '@iconify-json/lucide@1.2.97':
     dependencies:
       '@iconify/types': 2.0.0
 
@@ -6548,7 +6551,7 @@ snapshots:
 
   '@tanstack/devtools-client@0.0.6':
     dependencies:
-      '@tanstack/devtools-event-client': 0.4.1
+      '@tanstack/devtools-event-client': 0.4.3
 
   '@tanstack/devtools-event-bus@0.4.1':
     dependencies:
@@ -6557,7 +6560,7 @@ snapshots:
       - bufferutil
       - utf-8-validate
 
-  '@tanstack/devtools-event-client@0.4.1': {}
+  '@tanstack/devtools-event-client@0.4.3': {}
 
   '@tanstack/devtools-ui@0.5.0(csstype@3.2.3)':
     dependencies:
@@ -6568,7 +6571,7 @@ snapshots:
     transitivePeerDependencies:
       - csstype
 
-  '@tanstack/devtools-vite@0.5.3(rolldown-vite@7.2.5(@types/node@25.3.3)(jiti@2.6.1)(terser@5.44.1)(tsx@4.21.0)(yaml@2.8.2))':
+  '@tanstack/devtools-vite@0.5.5(rolldown-vite@7.2.5(@types/node@25.3.3)(jiti@2.6.1)(terser@5.44.1)(tsx@4.21.0)(yaml@2.8.2))':
     dependencies:
       '@babel/core': 7.29.0
       '@babel/generator': 7.29.1
@@ -6586,7 +6589,7 @@ snapshots:
       - supports-color
       - utf-8-validate
 
-  '@tanstack/devtools@0.10.11(csstype@3.2.3)':
+  '@tanstack/devtools@0.10.14(csstype@3.2.3)':
     dependencies:
       '@solid-primitives/event-listener': 2.4.5(solid-js@1.9.11)
       '@solid-primitives/keyboard': 1.3.5(solid-js@1.9.11)
@@ -6625,9 +6628,9 @@ snapshots:
 
   '@tanstack/query-devtools@5.93.0': {}
 
-  '@tanstack/react-devtools@0.9.10(@types/react-dom@19.2.3(@types/react@19.2.14))(@types/react@19.2.14)(csstype@3.2.3)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)':
+  '@tanstack/react-devtools@0.9.13(@types/react-dom@19.2.3(@types/react@19.2.14))(@types/react@19.2.14)(csstype@3.2.3)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)':
     dependencies:
-      '@tanstack/devtools': 0.10.11(csstype@3.2.3)
+      '@tanstack/devtools': 0.10.14(csstype@3.2.3)
       '@types/react': 19.2.14
       '@types/react-dom': 19.2.3(@types/react@19.2.14)
       react: 19.2.4
@@ -7372,7 +7375,7 @@ snapshots:
   browserslist@4.28.1:
     dependencies:
       baseline-browser-mapping: 2.10.0
-      caniuse-lite: 1.0.30001777
+      caniuse-lite: 1.0.30001778
       electron-to-chromium: 1.5.307
       node-releases: 2.0.36
       update-browserslist-db: 1.2.3(browserslist@4.28.1)
@@ -7402,7 +7405,7 @@ snapshots:
       call-bind-apply-helpers: 1.0.2
       get-intrinsic: 1.3.0
 
-  caniuse-lite@1.0.30001777: {}
+  caniuse-lite@1.0.30001778: {}
 
   chai@6.2.2: {}
 
@@ -8737,48 +8740,48 @@ snapshots:
       picocolors: 1.1.1
       shell-quote: 1.8.3
 
-  lefthook-darwin-arm64@2.1.3:
+  lefthook-darwin-arm64@2.1.4:
     optional: true
 
-  lefthook-darwin-x64@2.1.3:
+  lefthook-darwin-x64@2.1.4:
     optional: true
 
-  lefthook-freebsd-arm64@2.1.3:
+  lefthook-freebsd-arm64@2.1.4:
     optional: true
 
-  lefthook-freebsd-x64@2.1.3:
+  lefthook-freebsd-x64@2.1.4:
     optional: true
 
-  lefthook-linux-arm64@2.1.3:
+  lefthook-linux-arm64@2.1.4:
     optional: true
 
-  lefthook-linux-x64@2.1.3:
+  lefthook-linux-x64@2.1.4:
     optional: true
 
-  lefthook-openbsd-arm64@2.1.3:
+  lefthook-openbsd-arm64@2.1.4:
     optional: true
 
-  lefthook-openbsd-x64@2.1.3:
+  lefthook-openbsd-x64@2.1.4:
     optional: true
 
-  lefthook-windows-arm64@2.1.3:
+  lefthook-windows-arm64@2.1.4:
     optional: true
 
-  lefthook-windows-x64@2.1.3:
+  lefthook-windows-x64@2.1.4:
     optional: true
 
-  lefthook@2.1.3:
+  lefthook@2.1.4:
     optionalDependencies:
-      lefthook-darwin-arm64: 2.1.3
-      lefthook-darwin-x64: 2.1.3
-      lefthook-freebsd-arm64: 2.1.3
-      lefthook-freebsd-x64: 2.1.3
-      lefthook-linux-arm64: 2.1.3
-      lefthook-linux-x64: 2.1.3
-      lefthook-openbsd-arm64: 2.1.3
-      lefthook-openbsd-x64: 2.1.3
-      lefthook-windows-arm64: 2.1.3
-      lefthook-windows-x64: 2.1.3
+      lefthook-darwin-arm64: 2.1.4
+      lefthook-darwin-x64: 2.1.4
+      lefthook-freebsd-arm64: 2.1.4
+      lefthook-freebsd-x64: 2.1.4
+      lefthook-linux-arm64: 2.1.4
+      lefthook-linux-x64: 2.1.4
+      lefthook-openbsd-arm64: 2.1.4
+      lefthook-openbsd-x64: 2.1.4
+      lefthook-windows-arm64: 2.1.4
+      lefthook-windows-x64: 2.1.4
 
   leven@3.1.0: {}
 
