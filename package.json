@@ -32,7 +32,7 @@
   },
   "devDependencies": {
     "@iconify-json/logos": "1.2.10",
-    "@iconify-json/lucide": "1.2.98",
+    "@iconify-json/lucide": "1.2.99",
     "@iconify/tailwind4": "1.2.3",
     "@jimmy.codes/eslint-config": "7.5.2",
     "@playwright/test": "1.58.2",
@@ -43,7 +43,7 @@
     "@tanstack/react-devtools": "0.10.0",
     "@tanstack/react-query-devtools": "5.95.2",
     "@tanstack/react-router-devtools": "1.166.11",
-    "@tanstack/router-vite-plugin": "1.166.19",
+    "@tanstack/router-vite-plugin": "1.166.20",
     "@testing-library/dom": "10.4.1",
     "@testing-library/jest-dom": "6.9.1",
     "@testing-library/react": "16.3.2",
