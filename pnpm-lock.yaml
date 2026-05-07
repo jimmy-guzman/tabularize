@@ -70,8 +70,8 @@ importers:
         specifier: 1.166.13
         version: 1.166.13(@tanstack/react-router@1.169.1(react-dom@19.2.5(react@19.2.5))(react@19.2.5))(@tanstack/router-core@1.169.2)(csstype@3.2.3)(react-dom@19.2.5(react@19.2.5))(react@19.2.5)
       '@tanstack/router-vite-plugin':
-        specifier: 1.166.49
-        version: 1.166.49(@tanstack/react-router@1.169.1(react-dom@19.2.5(react@19.2.5))(react@19.2.5))(rolldown-vite@7.2.5(@types/node@25.6.0)(jiti@2.7.0)(terser@5.46.2)(yaml@2.8.4))
+        specifier: 1.166.50
+        version: 1.166.50(@tanstack/react-router@1.169.1(react-dom@19.2.5(react@19.2.5))(react@19.2.5))(rolldown-vite@7.2.5(@types/node@25.6.0)(jiti@2.7.0)(terser@5.46.2)(yaml@2.8.4))
       '@testing-library/dom':
         specifier: 10.4.1
         version: 10.4.1
@@ -115,8 +115,8 @@ importers:
         specifier: 10.3.0
         version: 10.3.0(jiti@2.7.0)
       gitzy:
-        specifier: 6.5.9
-        version: 6.5.9
+        specifier: 7.0.6
+        version: 7.0.6
       happy-dom:
         specifier: 20.9.0
         version: 20.9.0
@@ -127,8 +127,8 @@ importers:
         specifier: 2.7.0
         version: 2.7.0
       knip:
-        specifier: 6.11.0
-        version: 6.11.0(@emnapi/core@1.10.0)(@emnapi/runtime@1.10.0)
+        specifier: 6.12.0
+        version: 6.12.0(@emnapi/core@1.10.0)(@emnapi/runtime@1.10.0)
       lefthook:
         specifier: 2.1.6
         version: 2.1.6
@@ -1864,12 +1864,12 @@ packages:
       csstype:
         optional: true
 
-  '@tanstack/router-generator@1.166.41':
-    resolution: {integrity: sha512-XpnkVvk9AlCtw5vggJsnSx3MdKGk8Asopwy9wUFAqFAHqlrRJzV9PoZ5kGkNEJMOYYcMTriJLN4D+kyXRUJpDQ==}
+  '@tanstack/router-generator@1.166.42':
+    resolution: {integrity: sha512-2qBWC0t78r6b3vI+AbnvCZcFAvbYBDlLuWZrTjQbcjUmwG3qyeQp983tJyDuj9wb5//adG1tgAGXZkJ3aDwdBg==}
     engines: {node: '>=20.19'}
 
-  '@tanstack/router-plugin@1.167.34':
-    resolution: {integrity: sha512-hU0Cuw79Yo6FGPBB0mW9Ik8bnTzmnUKtbgbvmIzeFdK3wKBPS4+xN7kcxVaBqXfP6xR3PFkIf2SSoYsiuLjVtg==}
+  '@tanstack/router-plugin@1.167.35':
+    resolution: {integrity: sha512-UAScU5VAzLYVY4FML/Cbc5S5TucT4I8Ata05yozGOe4ZfepTKRffA5xWLtD2N+ov5svdv0KTX/kqlZnYPe28mA==}
     engines: {node: '>=20.19'}
     peerDependencies:
       '@rsbuild/core': '>=1.0.2 || ^2.0.0'
@@ -1893,8 +1893,8 @@ packages:
     resolution: {integrity: sha512-xyiLWEKjfBAVhauDSSjXxyf7s8elU6SM+V050sbkofvGmIIvkwPFtDsX7Gvwh14kBd6iCwAT+RiPvXTxAptY0Q==}
     engines: {node: '>=20.19'}
 
-  '@tanstack/router-vite-plugin@1.166.49':
-    resolution: {integrity: sha512-68oDikho9Lp8tLT7Nz8teRUOS+AvvbBrWEYaOwn+jG3kVJhS5C6dDU2f+yMGcfOn/2EQwFy+6dOHIFJFWuew+g==}
+  '@tanstack/router-vite-plugin@1.166.50':
+    resolution: {integrity: sha512-T8aAW4UWUPRyGUENpEjWOjVb9heI6SbMzuLgu5kIeTED8ZZ4oIZTmDdoAjDyDVkUqRMn/lfa2/dMoYD7oU5qhw==}
     engines: {node: '>=20.19'}
 
   '@tanstack/store@0.9.3':
@@ -3315,9 +3315,9 @@ packages:
   git-hooks-list@4.2.1:
     resolution: {integrity: sha512-WNvqJjOxxs/8ZP9+DWdwWJ7cDsd60NHf39XnD82pDVrKO5q7xfPqpkK6hwEAmBa/ZSEE4IOoR75EzbbIuwGlMw==}
 
-  gitzy@6.5.9:
-    resolution: {integrity: sha512-NseXyfcECEsfPSMEUPkgBhwVI6cOj7qutGpbhlpxK6hufkEwfBJCj6ZeTtnL2ipTOHXTsy7ewkiR9tTqu4Vm7A==}
-    engines: {node: ^20.19.0 || >=22.12.0}
+  gitzy@7.0.6:
+    resolution: {integrity: sha512-ZY3ZqaKLVByx21zTCRYT+MwP8fvkpbkv2mD6UYIKDNtVaIlIkti4qD2qHW+oTjtbtr+GJivAJbW59G0cKTocfA==}
+    engines: {node: ^22.13.0 || >=24}
     hasBin: true
 
   glob-parent@5.1.2:
@@ -3676,8 +3676,8 @@ packages:
   keyv@4.5.4:
     resolution: {integrity: sha512-oxVHkHR/EJf2CNXnWxRLW6mg7JyCCUcG0DtEGmL2ctUo1PNTin1PUil+r/+4r5MpVgC/fn1kjsx7mjSujKqIpw==}
 
-  knip@6.11.0:
-    resolution: {integrity: sha512-84PTlN8Q5smLpTbzs8smTVh8PMbTDXtw0tFksXq/m6auGFC/KSzJykKFmnYh3As38kiWDkoDBvdTTyKk5M1TAQ==}
+  knip@6.12.0:
+    resolution: {integrity: sha512-nRg8+DOFcfBD6NjmNzu9+3D35QnEmMsnojJGOHQUqv+70r1aOx99wpSUXvEV7syQVOL5E6tNXXkoyG1Fuz8BWg==}
     engines: {node: ^20.19.0 || >=22.12.0}
     hasBin: true
 
@@ -4708,12 +4708,12 @@ packages:
   tinybench@2.9.0:
     resolution: {integrity: sha512-0+DUvqWMValLmha6lr4kD8iAMK1HzV0/aKnCtWb9v9641TnP/MFb7Pc2bxoxQjTXAErryXVgUOfv2YqNllqGeg==}
 
-  tinyexec@1.0.2:
-    resolution: {integrity: sha512-W/KYk+NFhkmsYpuHq5JykngiOCnxeVL8v8dFnqxSD8qEEdRfXk1SDM6JzNqcERbcGYj9tMrDQBYV9cjgnunFIg==}
-    engines: {node: '>=18'}
-
   tinyexec@1.1.1:
     resolution: {integrity: sha512-VKS/ZaQhhkKFMANmAOhhXVoIfBXblQxGX1myCQ2faQrfmobMftXeJPcZGp0gS07ocvGJWDLZGyOZDadDBqYIJg==}
+    engines: {node: '>=18'}
+
+  tinyexec@1.1.2:
+    resolution: {integrity: sha512-dAqSqE/RabpBKI8+h26GfLq6Vb3JVXs30XYQjdMjaj/c2tS8IYYMbIzP599KtRj7c57/wYApb3QjgRgXmrCukA==}
     engines: {node: '>=18'}
 
   tinyglobby@0.2.15:
@@ -5137,7 +5137,7 @@ snapshots:
   '@antfu/install-pkg@1.1.0':
     dependencies:
       package-manager-detector: 1.6.0
-      tinyexec: 1.1.1
+      tinyexec: 1.1.2
 
   '@apideck/better-ajv-errors@0.3.7(ajv@8.20.0)':
     dependencies:
@@ -6870,7 +6870,7 @@ snapshots:
     optionalDependencies:
       csstype: 3.2.3
 
-  '@tanstack/router-generator@1.166.41':
+  '@tanstack/router-generator@1.166.42':
     dependencies:
       '@babel/types': 7.29.0
       '@tanstack/router-core': 1.169.2
@@ -6883,7 +6883,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@tanstack/router-plugin@1.167.34(@tanstack/react-router@1.169.1(react-dom@19.2.5(react@19.2.5))(react@19.2.5))(rolldown-vite@7.2.5(@types/node@25.6.0)(jiti@2.7.0)(terser@5.46.2)(yaml@2.8.4))':
+  '@tanstack/router-plugin@1.167.35(@tanstack/react-router@1.169.1(react-dom@19.2.5(react@19.2.5))(react@19.2.5))(rolldown-vite@7.2.5(@types/node@25.6.0)(jiti@2.7.0)(terser@5.46.2)(yaml@2.8.4))':
     dependencies:
       '@babel/core': 7.29.0
       '@babel/plugin-syntax-jsx': 7.28.6(@babel/core@7.29.0)
@@ -6892,7 +6892,7 @@ snapshots:
       '@babel/traverse': 7.29.0
       '@babel/types': 7.29.0
       '@tanstack/router-core': 1.169.2
-      '@tanstack/router-generator': 1.166.41
+      '@tanstack/router-generator': 1.166.42
       '@tanstack/router-utils': 1.161.8
       '@tanstack/virtual-file-routes': 1.161.7
       chokidar: 3.6.0
@@ -6918,9 +6918,9 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@tanstack/router-vite-plugin@1.166.49(@tanstack/react-router@1.169.1(react-dom@19.2.5(react@19.2.5))(react@19.2.5))(rolldown-vite@7.2.5(@types/node@25.6.0)(jiti@2.7.0)(terser@5.46.2)(yaml@2.8.4))':
+  '@tanstack/router-vite-plugin@1.166.50(@tanstack/react-router@1.169.1(react-dom@19.2.5(react@19.2.5))(react@19.2.5))(rolldown-vite@7.2.5(@types/node@25.6.0)(jiti@2.7.0)(terser@5.46.2)(yaml@2.8.4))':
     dependencies:
-      '@tanstack/router-plugin': 1.167.34(@tanstack/react-router@1.169.1(react-dom@19.2.5(react@19.2.5))(react@19.2.5))(rolldown-vite@7.2.5(@types/node@25.6.0)(jiti@2.7.0)(terser@5.46.2)(yaml@2.8.4))
+      '@tanstack/router-plugin': 1.167.35(@tanstack/react-router@1.169.1(react-dom@19.2.5(react@19.2.5))(react@19.2.5))(rolldown-vite@7.2.5(@types/node@25.6.0)(jiti@2.7.0)(terser@5.46.2)(yaml@2.8.4))
     transitivePeerDependencies:
       - '@rsbuild/core'
       - '@tanstack/react-router'
@@ -8595,10 +8595,10 @@ snapshots:
 
   git-hooks-list@4.2.1: {}
 
-  gitzy@6.5.9:
+  gitzy@7.0.6:
     dependencies:
       lilconfig: 3.1.3
-      tinyexec: 1.0.2
+      tinyexec: 1.1.2
 
   glob-parent@5.1.2:
     dependencies:
@@ -8927,7 +8927,7 @@ snapshots:
     dependencies:
       json-buffer: 3.0.1
 
-  knip@6.11.0(@emnapi/core@1.10.0)(@emnapi/runtime@1.10.0):
+  knip@6.12.0(@emnapi/core@1.10.0)(@emnapi/runtime@1.10.0):
     dependencies:
       fdir: 6.5.0(picomatch@4.0.4)
       formatly: 0.3.0
@@ -9959,9 +9959,9 @@ snapshots:
 
   tinybench@2.9.0: {}
 
-  tinyexec@1.0.2: {}
-
   tinyexec@1.1.1: {}
+
+  tinyexec@1.1.2: {}
 
   tinyglobby@0.2.15:
     dependencies:
