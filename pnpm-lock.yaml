@@ -115,8 +115,8 @@ importers:
         specifier: 10.4.1
         version: 10.4.1(jiti@2.7.0)
       gitzy:
-        specifier: 7.1.0
-        version: 7.1.0
+        specifier: 7.2.0
+        version: 7.2.0
       happy-dom:
         specifier: 20.10.2
         version: 20.10.2
@@ -3414,8 +3414,8 @@ packages:
   git-hooks-list@4.2.1:
     resolution: {integrity: sha512-WNvqJjOxxs/8ZP9+DWdwWJ7cDsd60NHf39XnD82pDVrKO5q7xfPqpkK6hwEAmBa/ZSEE4IOoR75EzbbIuwGlMw==}
 
-  gitzy@7.1.0:
-    resolution: {integrity: sha512-oxBhjZ2L1niaS002SqoTeApSmKSqd6jKumLI+mYEmEPUV+ELa4KcG6c9iScUyMMLGeaXfwIugu44XNFLvtHUDQ==}
+  gitzy@7.2.0:
+    resolution: {integrity: sha512-m/VDc+HVk5PEcl0z1xLoyAgPgs5ziVTaNSvqQnOGCk3g0nEmATpfxHm+7g1fyYr0H2yCaQrCQ+qY8LUmncUZdA==}
     engines: {node: ^22.13.0 || >=24}
     hasBin: true
 
@@ -8670,7 +8670,7 @@ snapshots:
 
   git-hooks-list@4.2.1: {}
 
-  gitzy@7.1.0: {}
+  gitzy@7.2.0: {}
 
   glob-parent@5.1.2:
     dependencies:
