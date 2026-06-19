@@ -32,7 +32,7 @@
   },
   "devDependencies": {
     "@iconify-json/logos": "1.2.11",
-    "@iconify-json/lucide": "1.2.113",
+    "@iconify-json/lucide": "1.2.114",
     "@iconify/tailwind4": "1.2.3",
     "@jimmy.codes/eslint-config": "9.0.0",
     "@playwright/test": "1.61.0",
