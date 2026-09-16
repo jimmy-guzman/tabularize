@@ -28,7 +28,7 @@
     "lz-string": "1.5.0",
     "react": "19.3.0",
     "react-dom": "19.3.0",
-    "zod": "4.6.2"
+    "zod": "4.6.4"
   },
   "devDependencies": {
     "@iconify-json/logos": "1.2.14",
