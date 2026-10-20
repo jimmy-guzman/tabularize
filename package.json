@@ -23,7 +23,7 @@
   },
   "dependencies": {
     "@tanstack/react-query": "5.104.3",
-    "@tanstack/react-router": "1.170.44",
+    "@tanstack/react-router": "1.170.45",
     "cliptabular": "1.3.0",
     "lz-string": "1.5.0",
     "react": "19.3.1",
